@@ -1,12 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { Toaster } from "sonner";
+import GameContainer from "@/components/GameContainer";
+import { Calculator, TrendingUp, DollarSign } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-finance-light-gray">
+      <Toaster position="top-right" />
+      
+      <header className="bg-finance-blue text-white py-4 shadow-md">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <Calculator className="h-6 w-6" />
+              <h1 className="text-xl font-bold">Finance Math Whiz</h1>
+            </div>
+            <div className="flex items-center space-x-4">
+              <TrendingUp className="h-5 w-5" />
+              <DollarSign className="h-5 w-5" />
+            </div>
+          </div>
+        </div>
+      </header>
+      
+      <main className="container mx-auto py-8 px-4">
+        <GameContainer />
+      </main>
+      
+      <footer className="bg-white py-4 border-t">
+        <div className="container mx-auto px-4">
+          <p className="text-center text-gray-500 text-sm">
+            Financial Math Whiz Game © {new Date().getFullYear()} | Mock data for educational purposes only
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
